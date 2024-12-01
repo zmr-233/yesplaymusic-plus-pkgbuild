@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# Allow specific files in the root directory
+!PKGBUILD
+!yesplaymusic-plus.desktop
+!publish_script.sh
+!.gitignore
+!README.md
+
+# Ignore all directories
+*/
