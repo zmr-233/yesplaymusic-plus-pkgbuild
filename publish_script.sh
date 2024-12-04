@@ -37,8 +37,8 @@ clean_dir(){
 }
 
 main() {
-    # clean_dir
-    # build_package
+    clean_dir
+    build_package
     makepkg --printsrcinfo > .SRCINFO
     publish_package
 }
