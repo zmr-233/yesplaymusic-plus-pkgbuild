@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 
+# 0. 准备包
+prepare_package(){
+    # ~/.conda/envs/normal12/bin/python ./prepare.py || { echo "Failed to prepare package"; exit 1; }
+    python ./prepare.py || { echo "Failed to prepare package"; exit 1; }
+}
+
 # 1. 构建包
 build_package() {
     makepkg -fsi || { echo "Package build failed"; exit 1; }
@@ -19,8 +25,8 @@ publish_package() {
     pushd yesplaymusic-plus || { echo "Failed to enter directory"; exit 1; }
 
     # 复制必要的文件
-    cp ../PKGBUILD ../.SRCINFO ../yesplaymusic-plus.desktop ./
-    git add PKGBUILD .SRCINFO yesplaymusic-plus.desktop
+    cp ../PKGBUILD ../.SRCINFO ../yesplaymusic-plus.desktop ../yesplaymusic-plus.sh ./
+    git add PKGBUILD .SRCINFO yesplaymusic-plus.desktop yesplaymusic-plus.sh
     
     # 提交更改
     version=$(grep '^pkgver=' PKGBUILD | cut -d'=' -f2)
@@ -37,8 +43,9 @@ clean_dir(){
 }
 
 main() {
-    clean_dir
-    build_package
+    # clean_dir
+    # prepare_package
+    # build_package
     makepkg --printsrcinfo > .SRCINFO
     publish_package
 }

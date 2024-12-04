@@ -17,20 +17,7 @@ provides=("${_pkgname}=${pkgver}")
 # _electronversion=33 无法确保系统中有对应版本的electron，故使用系统中的electron
 _nodeversion=16
 
-conflicts=(
-    "my-yesplaymusic-bin"
-    "r3play-bin"
-    "r3playx-bin"
-    "r3playx-git"
-    "yesplaymusic"
-    "yesplaymusic-appimage"
-    "yesplaymusic-bin"
-    "yesplaymusic-electron"
-    "yesplaymusic-git"
-    "yesplaymusic-new"
-    "yesplaymusicosd-origin-electron-git"
-    "yesplaymusicosd-origin-git"
-)
+# @conflicts_list@
 
 depends=(
     "electron"
