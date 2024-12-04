@@ -44,7 +44,7 @@ clean_dir(){
 
 main() {
     # clean_dir
-    # prepare_package
+    prepare_package
     # build_package
     makepkg --printsrcinfo > .SRCINFO
     publish_package
