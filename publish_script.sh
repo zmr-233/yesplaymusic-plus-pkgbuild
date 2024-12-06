@@ -20,6 +20,9 @@ initialize_git_repo() {
 
 # 3. 发布包
 publish_package() {
+    # 更新 .SRCINFO 文件
+    makepkg --printsrcinfo > .SRCINFO
+
     # 确保仓库已初始化
     initialize_git_repo
     pushd yesplaymusic-plus || { echo "Failed to enter directory"; exit 1; }
@@ -46,7 +49,6 @@ main() {
     # clean_dir
     prepare_package
     # build_package
-    makepkg --printsrcinfo > .SRCINFO
     publish_package
 }
 
