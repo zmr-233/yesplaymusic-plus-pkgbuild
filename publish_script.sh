@@ -46,7 +46,7 @@ clean_dir(){
 }
 
 main() {
-    # clean_dir
+    clean_dir
     prepare_package
     # build_package
     publish_package
