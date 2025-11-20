@@ -3,11 +3,14 @@
 
 # Allow specific files in the root directory
 !pre-PKGBUILD
-!yesplaymusic.desktop
+!PKGBUILD
+!.SRCINFO
+!yesplaymusic-plus.desktop
+!yesplaymusic-plus.sh
 !publish_script.sh
 !.gitignore
 !README.md
-!yesplaymusic.sh
 !prepare.py
+
 # Ignore all directories
 */
